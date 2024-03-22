@@ -16,8 +16,8 @@ namespace MyGame
             }
             for (int i = 0; i<=(e-1); i++)
             {
-                Console.WriteLine
-                ($"{array[i].GetName()} {array[i].GetHealth()} {array[i].GetShield()}");
+                Console.Write($"{array[i].GetName()} {array[i].GetHealth()} ");
+                Console.WriteLine($"{array[i].GetShield()}");
             }
         }
     }
