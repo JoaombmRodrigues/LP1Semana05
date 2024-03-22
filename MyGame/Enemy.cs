@@ -1,3 +1,5 @@
+using System;
+
 namespace MyGame
 {
     public class Enemy
@@ -45,6 +47,16 @@ namespace MyGame
             if (name.Length > MaxLength)
             name = name.Substring(0,MaxLength);
             return name;
+        }
+
+        public void PickupPowerUp(PowerUp pwrup, float vlr)
+        {
+            if (pwrup == PowerUp.health)
+            health += vlr;
+            else if (pwrup == PowerUp.shield)
+            shield += vlr;
+            else
+            Console.WriteLine("Invalid power up"); 
         }
     }
 }
