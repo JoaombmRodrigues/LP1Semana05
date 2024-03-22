@@ -7,7 +7,7 @@ namespace MyGame
         private float shield = 0;
         public Enemy(string name)
         {
-            this.name = SetName();
+            this.name = SetName(name);
             health = 100;
             shield = 0;
         }
@@ -39,7 +39,7 @@ namespace MyGame
             return shield += 50;
         }
 
-        public string SetName()
+        public string SetName(string name)
         {
             int MaxLength = 8;
             if (name.Length > MaxLength)
