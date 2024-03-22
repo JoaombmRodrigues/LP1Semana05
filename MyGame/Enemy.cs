@@ -31,12 +31,12 @@ namespace MyGame
 
         public float GetHealth()
         {
-            return health += 50;
+            return health;
         }
 
         public float GetShield()
         {
-            return shield += 50;
+            return shield;
         }
 
         public string SetName(string name)
