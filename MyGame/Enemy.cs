@@ -7,17 +7,25 @@ namespace MyGame
         private string name;
         private float health = 100;
         private float shield = 0;
+        static int pwrupnum;
+
+        static void initStatic()
+        {
+            pwrupnum = 0;
+        }
         public Enemy(string name)
         {
             this.name = SetName(name);
             health = 100;
             shield = 0;
+            initStatic();
         }
 
         public string GetName()
         {
             return name;
         }
+
 
         public void TakeDamage(float damage)
         {
@@ -36,6 +44,10 @@ namespace MyGame
             return health;
         }
 
+        public static int GetPowerUps()
+        {
+            return pwrupnum;
+        }
         public float GetShield()
         {
             return shield;
@@ -55,11 +67,13 @@ namespace MyGame
             {
                 health += vlr;
                 if (health>100) health = 100;
+                pwrupnum += 1;
             }
             else if (pwrup == PowerUp.shield)
             {
                 shield += vlr;
                 if (shield>100) shield = 100;
+                pwrupnum += 1;
             }
             else
             Console.WriteLine("Invalid power up"); 
