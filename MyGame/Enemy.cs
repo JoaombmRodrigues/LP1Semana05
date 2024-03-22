@@ -52,9 +52,15 @@ namespace MyGame
         public void PickupPowerUp(PowerUp pwrup, float vlr)
         {
             if (pwrup == PowerUp.health)
-            health += vlr;
+            {
+                health += vlr;
+                if (health>100) health = 100;
+            }
             else if (pwrup == PowerUp.shield)
-            shield += vlr;
+            {
+                shield += vlr;
+                if (shield>100) shield = 100;
+            }
             else
             Console.WriteLine("Invalid power up"); 
         }
